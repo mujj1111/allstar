@@ -734,10 +734,9 @@ select.form-control {
 
 /* Ethnocentric */
 @font-face {
-  font-family: 'Ethnocentric';
-  src: url('/fonts/ethnocentric.woff2') format('woff2'),
-       url('/fonts/ethnocentric.woff') format('woff'),
-       url('/fonts/Ethnocentric Rg.otf') format('opentype'); /* notice no backslash */
+  font-family: 'Ethnocentric-Regular';
+  src: url('/fonts/Ethnocentric-Regular.woff2') format('woff2'),
+       url('/fonts/Ethnocentric-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
