@@ -431,28 +431,40 @@
     </footer>
 
     <script src="app.js"></script>
-	<script>
-	document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-    let formData = new FormData(this);
+  const formData = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    interest: document.getElementById("interest").value,
+    message: document.getElementById("message").value
+  };
 
-    fetch("send_whatsapp.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.status === "success") {
-            document.getElementById("form-success").classList.remove("hidden");
-            document.getElementById("contact-form").reset();
-        } else {
-            alert("Failed to send WhatsApp message. Try again!");
-        }
-    })
-    .catch(err => console.log(err));
+  try {
+    const res = await fetch("/send_whatsapp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await res.json();
+
+    if (data.status === "success") {
+      document.getElementById("form-success").classList.remove("hidden");
+      document.getElementById("contact-form").reset();
+    } else {
+      console.log(data);
+      alert("Failed to send WhatsApp. Check console.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong.");
+  }
 });
 
-	</script>
+</script>
 </body>
 </html>
