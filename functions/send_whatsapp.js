@@ -16,7 +16,7 @@ export async function onRequestPost(context) {
           "namespace": "8606aba3_99bf_41f5_b236_368ffad4afad",
           "to_and_components": [
             {
-              "to": ["919171325552"], // Your WhatsApp number
+              "to": ["918220689771","919171325552"], // Your WhatsApp number
               "components": {
                 "body_1": { "type": "text", "value": name },
                 "body_2": { "type": "text", "value": email },
@@ -57,3 +57,4 @@ export async function onRequestPost(context) {
     }), { headers: { "Content-Type": "application/json" }, status: 500 });
   }
 }
+
