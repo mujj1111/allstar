@@ -727,6 +727,14 @@ select.form-control {
   font-family: 'FKGroteskNeue';
   src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
     format('woff2');
+	
+	font-family: 'Ethnocentric';
+	src: url('/fonts/ethnocentric.woff2') format('woff2'),
+       url('/fonts/ethnocentric.woff') format('woff'),
+       url('/fonts/Ethnocentric\ Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
@@ -925,6 +933,7 @@ body {
 }
 
 .hero__content {
+	 padding-top: 80px; /* Adjust according to navbar height */
   color: white;
 }
 
@@ -1632,6 +1641,11 @@ select.form-control option {
   
   .hero__actions {
     flex-direction: column;
+  }
+  
+   .hero__content {
+    padding-top: 100px; /* more space for mobile nav */
+    text-align: center; /* optional for better alignment */
   }
   
   .search-row {
